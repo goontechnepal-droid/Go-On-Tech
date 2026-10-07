@@ -16,7 +16,7 @@ const COMPANY_LINKS = [
 export default function Footer() {
   const { data: solutions = [] } = useServices('solution');
   const { data: hardware = [] } = useServices('hardware');
-  const year = new Date().getFullYear();
+  const year = 2025;
 
   return (
     <footer className={styles.footer}>

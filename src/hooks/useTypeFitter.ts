@@ -115,7 +115,6 @@ function runLayout(root: HTMLElement, scale: CanvasScale): void {
   fitBox(get('badgeTxt'), 184 * T, 9.4 * T, 'translate(2px,-1px)');
   fitBox(get('vpLabel'), 76 * T, 9.5 * T);
   centreLabel(get('vpLabel'), 9.5 * T);
-
 }
 
 /**
