@@ -1,0 +1,88 @@
+/* ============ PageHero ============ */
+/* the fixed navbar floats over the top of the hero, so the padding clears it */
+.hero{position:relative;overflow:hidden;padding:148px 20px 72px;min-height:52vh;
+  display:flex;align-items:center;background:var(--bg);border-bottom:1px solid var(--line)}
+.heroGlow{position:absolute;inset:0;
+  background:
+    radial-gradient(62% 58% at 50% 112%,color-mix(in srgb,var(--brand-primary) 17%,transparent),transparent 70%),
+    linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--brand-primary) 4%,transparent))}
+.heroInner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+.crumbs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:22px;font-size:13px;color:var(--text-muted)}
+.crumbs a{transition:color .2s}
+.crumbs a:hover{color:var(--brand-primary)}
+.crumbs [aria-current]{font-weight:600;color:var(--text)}
+.heroTitle{margin-top:20px;font-weight:900;text-transform:uppercase;font-size:clamp(32px,5vw,56px);
+  line-height:1.04;letter-spacing:-.01em;text-wrap:balance;color:var(--text)}
+.heroSub{margin-top:16px;max-width:640px;font-size:clamp(15px,1.5vw,18px);line-height:1.6;color:var(--text-muted)}
+.heroActions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:30px}
+
+/* ============ ServiceDetail ============ */
+.overview{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,80px);align-items:center}
+.lead{font-size:clamp(17px,1.7vw,20px);line-height:1.6;font-weight:500;color:var(--text)}
+.prose{margin-top:16px;font-size:16px;line-height:1.75;color:var(--text-muted)}
+.illustration{position:relative;display:grid;place-items:center;min-height:440px;border-radius:var(--radius-lg);
+  border:1px solid var(--line);overflow:hidden;
+  background:
+    radial-gradient(70% 52% at 50% 104%,color-mix(in srgb,var(--brand-primary) 22%,transparent),transparent 72%),
+    linear-gradient(180deg,var(--tint-s-1),#fff)}
+/* the carousel creative is authored at 130 x 300; zoom scales art and type together */
+.illustrationCard{zoom:1.22}
+
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.checklist{display:grid;gap:12px}
+.checklist li{display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:var(--text)}
+.checklist svg{flex:0 0 auto;margin-top:2px;padding:3px;width:22px;height:22px;border-radius:50%;
+  color:#fff;background:var(--brand-primary)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--brand-deep) 20%,transparent);background:var(--surface);
+  font-size:14px;font-weight:500;color:var(--text);
+  cursor:pointer;transition:border-color .25s,background .25s,color .25s}
+.chip:hover{border-color:var(--brand-primary);color:var(--brand-primary)}
+.chipActive,.chipActive:hover{border-color:var(--brand-primary);background:var(--brand-primary);color:#fff;font-weight:600}
+
+.faqs{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq{border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface);box-shadow:var(--shadow-sm);
+  transition:border-color .25s,box-shadow .25s}
+.faqOpen{border-color:color-mix(in srgb,var(--brand-primary) 55%,transparent);box-shadow:var(--shadow-md)}
+.faqButton{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:18px 20px;
+  border:0;border-radius:var(--radius-md);background:transparent;text-align:left;cursor:pointer;
+  font-size:16px;font-weight:600;line-height:1.4;color:var(--text)}
+.faqButton svg{flex:0 0 auto;color:var(--brand-primary);transition:transform .25s}
+.faqOpen .faqButton svg{transform:rotate(180deg)}
+.faqPanel{padding:0 20px 20px;font-size:15px;line-height:1.7;color:var(--text-muted)}
+@media (prefers-reduced-motion:reduce){.faqButton svg{transition:none}}
+
+/* ============ skeleton ============ */
+.skeleton{min-height:100vh;padding:160px 20px 80px;background:var(--bg)}
+.skeletonInner{display:flex;flex-direction:column;align-items:center;gap:20px}
+.skeletonGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%;margin-top:56px}
+.bone{border-radius:var(--radius-md);
+  background:linear-gradient(100deg,var(--tint-s-1) 40%,var(--tint-s-2) 50%,var(--tint-s-1) 60%);
+  background-size:200% 100%;animation:shimmer 1.4s linear infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.bone{animation:none}}
+
+/* ============ CtaBand ============ */
+.ctaWrap{padding:clamp(56px,8vw,96px) 20px;background:var(--bg)}
+.cta{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:clamp(48px,7vw,88px) 24px;border-radius:var(--radius-lg);
+  border:1px solid color-mix(in srgb,var(--brand-primary) 26%,transparent);
+  background:
+    radial-gradient(62% 95% at 50% 128%,color-mix(in srgb,var(--brand-primary) 34%,transparent),transparent 70%),
+    linear-gradient(180deg,#fff,var(--tint-o-1));
+  box-shadow:var(--shadow-md)}
+.ctaTitle{max-width:760px;font-weight:800;text-transform:uppercase;font-size:clamp(26px,4vw,44px);
+  line-height:1.08;letter-spacing:-.01em;text-wrap:balance;color:var(--text)}
+.ctaActions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
+
+@media (max-width:1080px){
+  .overview{grid-template-columns:1fr}
+  .illustration{min-height:420px}
+}
+@media (max-width:700px){
+  .hero{padding:118px 16px 56px;min-height:0}
+  .twoCol{grid-template-columns:1fr}
+  .skeletonGrid{grid-template-columns:1fr}
+  .ctaWrap{padding-left:16px;padding-right:16px}
+}

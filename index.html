@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Go On Tech: Cybersecurity, Cloud &amp; Secure Card Solutions | Kathmandu</title>
+    <meta name="description" content="Go On Tech Pvt. Ltd., Kathmandu: cybersecurity, VAPT, cloud services, SaaS platforms, website monitoring, DevOps, IT audit, bank card printing, ID cards, label printers, PDA and barcode solutions." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <!-- no white flash while a route chunk loads -->
+    <style>html{background:#ffffff}</style>
+    <!-- Arms the home-page entrance BEFORE first paint: only on "/", only once per browser
+         session. The 4000ms failsafe guarantees content is never left hidden. -->
+    <script>
+      (function () {
+        try {
+          if (location.pathname !== '/' || sessionStorage.getItem('goon-intro-played')) return;
+        } catch (e) { return; }
+        document.documentElement.classList.add('intro');
+        setTimeout(function () { document.documentElement.classList.remove('intro'); }, 4000);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

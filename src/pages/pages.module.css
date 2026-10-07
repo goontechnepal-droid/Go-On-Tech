@@ -1,0 +1,79 @@
+/* shared by the inner pages */
+
+/* ---- filter chips (/solutions) ---- */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:clamp(28px,4vw,44px)}
+.empty{max-width:520px;margin:0 auto;padding:40px 24px;text-align:center;border-radius:var(--radius-lg);
+  border:1px dashed color-mix(in srgb,var(--brand-deep) 28%,transparent);background:var(--surface);color:var(--text-muted)}
+.empty p{margin-bottom:10px;font-size:17px;font-weight:500;color:var(--text)}
+
+/* ---- clients ---- */
+.clientGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.clientCard{display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-height:190px}
+.clientCard:target{border-color:var(--brand-primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand-primary) 22%,transparent),var(--shadow-md)}
+.clientLogo{display:grid;place-items:center start;min-height:64px;width:100%;font-size:19px;font-weight:600;line-height:1.3;color:var(--text)}
+.clientLogo img{max-height:64px;max-width:70%;object-fit:contain}
+.sector{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;font-size:12.5px;font-weight:500;
+  color:var(--text);border:1px solid color-mix(in srgb,var(--brand-primary) 34%,transparent);
+  background:var(--tint-o-1)}
+.site{display:inline-flex;align-items:center;gap:6px;margin-top:auto;font-size:14px;font-weight:600;color:var(--text);transition:color .2s}
+.site svg{color:var(--brand-primary)}
+.site:hover{color:var(--brand-primary)}
+
+/* ---- about ---- */
+.narrow{max-width:760px;margin:0 auto}
+.body{font-size:17px;line-height:1.75;color:var(--text-muted)}
+.body + .body{margin-top:16px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.splitCard h3{font-size:20px;font-weight:600}
+.splitCard p{margin-top:8px;font-size:15px;line-height:1.6;color:var(--text-muted)}
+.linkList{margin-top:16px;display:grid;gap:8px}
+.linkList a{display:inline-flex;gap:8px;font-size:15px;font-weight:500;color:var(--text);transition:color .2s}
+.linkList svg{color:var(--brand-primary)}
+.linkList a:hover{color:var(--brand-primary)}
+.more{display:inline-block;margin-top:18px;font-size:14px;font-weight:600;color:var(--text)}
+.more span{color:var(--brand-primary)}
+
+/* ---- contact / form pages ---- */
+.columns{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(20px,3vw,36px);align-items:start}
+.contactCards{display:grid;gap:14px}
+.contactCard{display:flex;align-items:flex-start;gap:14px}
+.contactCard h2,.contactCard h3{font-size:15px;font-weight:600;color:var(--text)}
+.contactCard p{margin-top:2px;font-size:14.5px;line-height:1.5;color:var(--text-muted);overflow-wrap:anywhere}
+.contactIcon{flex:0 0 auto;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;color:var(--brand-primary);
+  border:1px solid color-mix(in srgb,var(--brand-primary) 22%,transparent);
+  background:linear-gradient(180deg,#fff,var(--tint-o-2))}
+.included h2{font-size:18px;font-weight:600;color:var(--text)}
+.included ul{margin-top:14px;display:grid;gap:11px}
+.included li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5;color:var(--text)}
+.included svg{flex:0 0 auto;margin-top:3px;color:var(--brand-primary)}
+.included p{margin-top:16px;font-size:14px;line-height:1.6;color:var(--text-muted)}
+
+/* ---- legal ---- */
+.draft{display:flex;align-items:center;gap:10px;margin-bottom:28px;padding:12px 16px;border-radius:var(--radius-sm);
+  font-size:14px;font-weight:600;
+  border:1px solid color-mix(in srgb,var(--brand-primary) 55%,transparent);
+  background:var(--tint-o-1);color:var(--text)}
+.draft svg{color:var(--brand-primary)}
+.legal h2{margin:32px 0 10px;font-size:20px;font-weight:600;color:var(--text)}
+.legal p,.legal li{font-size:16px;line-height:1.75;color:var(--text-muted)}
+.legal p.draft{color:var(--text);font-size:14px;line-height:1.5}
+.legal p + p{margin-top:12px}
+.legal ul{margin-top:8px;padding-left:20px;list-style:disc}
+.legal a{font-weight:600;color:var(--text);text-decoration:underline;text-decoration-color:var(--brand-primary);text-underline-offset:3px}
+
+/* ---- 404 ---- */
+.notFound{position:relative;overflow:hidden;min-height:100vh;padding:150px 20px 96px;
+  display:grid;place-items:center;text-align:center;
+  background:radial-gradient(62% 50% at 50% 108%,color-mix(in srgb,var(--brand-primary) 16%,transparent),transparent 70%),var(--bg)}
+.notFoundInner{position:relative;z-index:1}
+.code{font-weight:900;font-size:clamp(96px,22vw,220px);line-height:.9;letter-spacing:-.03em;color:var(--brand-primary)}
+.notFound p{margin-top:18px;font-size:17px;color:var(--text-muted)}
+.notFoundActions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
+
+@media (max-width:1080px){
+  .clientGrid{grid-template-columns:repeat(2,1fr)}
+  .columns{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .clientGrid,.split{grid-template-columns:1fr}
+}

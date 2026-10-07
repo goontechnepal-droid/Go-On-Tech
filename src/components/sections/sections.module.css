@@ -1,0 +1,98 @@
+/* ============ section shell ============ */
+/* sections alternate between white and the palest slate tint for rhythm */
+.section{position:relative;overflow:hidden;padding:clamp(72px,10vw,128px) 20px;background:var(--bg)}
+.section:nth-of-type(even){background:var(--surface-2)}
+.compact{padding-top:clamp(48px,7vw,84px);padding-bottom:clamp(56px,8vw,96px)}
+.inner{position:relative;z-index:1}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:clamp(32px,4vw,48px)}
+
+/* ============ service card ============ */
+.serviceCard{display:flex;flex-direction:column;height:100%}
+.iconTile{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;color:var(--brand-primary);
+  border:1px solid color-mix(in srgb,var(--brand-primary) 22%,transparent);
+  background:linear-gradient(180deg,#fff,var(--tint-o-2))}
+.cardTitle{margin-top:18px;font-size:18px;font-weight:600;letter-spacing:-.005em;color:var(--text)}
+.cardTagline{margin-top:6px;font-size:14px;line-height:1.55;color:var(--text-muted)}
+.cardSummary{margin-top:12px;font-size:14.5px;line-height:1.65;color:var(--text-muted)}
+.bullets{margin-top:16px;display:grid;gap:8px}
+.bullets li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;line-height:1.45;color:var(--text)}
+.bullets svg{flex:0 0 auto;margin-top:3px;color:var(--brand-primary)}
+/* label stays slate for contrast; the arrow carries the orange */
+.more{margin-top:auto;padding-top:20px;font-size:13.5px;font-weight:600;color:var(--text)}
+.more span{display:inline-block;color:var(--brand-primary);transition:translate .25s var(--ease-expo)}
+.serviceCard:hover .more span,.industry:hover .more span{translate:4px 0}
+.large .cardTitle{font-size:22px}
+@media (prefers-reduced-motion:reduce){
+  .more span{transition:none}
+  .serviceCard:hover .more span,.industry:hover .more span{translate:none}
+}
+
+/* ============ grids ============ */
+/* bento: three columns; the two featured cards span two. `dense` lets a standard
+   card fill the cell beside each large one, giving rows of 2+1, 2+1, 1+1+1. */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:18px}
+.span2{grid-column:span 2}
+/* 4 / 3: twelve columns, first four cards span 3, the last three span 4 */
+.grid43{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.grid43 > *{grid-column:span 3}
+.grid43 > *:nth-child(n+5){grid-column:span 4}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+.industries{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.industry{display:flex;flex-direction:column}
+.industry .cardTitle{font-size:16px}
+
+/* ============ steps ============ */
+.steps{position:relative;display:grid;grid-template-columns:repeat(var(--steps,4),1fr);gap:24px}
+.steps::before{content:"";position:absolute;left:22px;right:22px;top:22px;height:1.5px;
+  background:linear-gradient(90deg,var(--brand-primary),color-mix(in srgb,var(--brand-primary) 22%,transparent))}
+.step{position:relative}
+.stepNo{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;
+  font-size:13px;font-weight:700;color:var(--brand-primary);background:var(--surface);
+  border:1.5px solid var(--brand-primary);
+  box-shadow:0 0 0 6px var(--bg)}
+/* the ring around each number matches the section ground it sits on */
+.section:nth-of-type(even) .stepNo{box-shadow:0 0 0 6px var(--surface-2)}
+
+/* ============ clients ============ */
+.clients{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
+.clientTile{display:grid;place-items:center;min-height:104px;padding:18px 20px;text-align:center;border-radius:var(--radius-lg);
+  border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm);
+  font-weight:600;font-size:15px;line-height:1.35;color:var(--text);
+  transition:border-color .3s,transform .3s var(--ease-expo),box-shadow .3s}
+.clientTile:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--brand-primary) 55%,transparent);box-shadow:var(--shadow-md)}
+.clientTile img{max-height:56px;max-width:100%;object-fit:contain}
+
+@media (prefers-reduced-motion:reduce){
+  .clientTile{transition:border-color .3s}
+  .clientTile:hover{transform:none}
+}
+
+@media (max-width:1080px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .grid43 > *,.grid43 > *:nth-child(n+5){grid-column:span 6}
+  .cards3{grid-template-columns:repeat(2,1fr)}
+  .industries{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:32px 24px}
+  .steps::before{display:none}
+}
+@media (max-width:700px){
+  .section{padding-left:16px;padding-right:16px}
+  .bento,.cards3{grid-template-columns:1fr}
+  .span2{grid-column:auto}
+  .grid43 > *,.grid43 > *:nth-child(n+5){grid-column:span 12}
+  .industries{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:0}
+  /* stacked steps: the accent line runs down the left, through the numbers */
+  .steps::before{display:block;left:22px;right:auto;top:22px;bottom:22px;width:1.5px;height:auto;
+    background:linear-gradient(180deg,var(--brand-primary),color-mix(in srgb,var(--brand-primary) 22%,transparent))}
+  .step{padding:0 0 28px 62px;min-height:44px}
+  .step:last-child{padding-bottom:0}
+  .stepNo{position:absolute;left:0;top:0}
+  .step .cardTitle{margin-top:0;padding-top:9px}
+  .clients{grid-template-columns:1fr 1fr}
+  .clientTile{min-height:88px;font-size:14px}
+}
+@media (max-width:380px){
+  .industries{grid-template-columns:1fr}
+}

@@ -1,0 +1,15 @@
+.card{
+  position:relative;display:block;padding:24px;border-radius:var(--radius-lg);
+  border:1px solid var(--line);background:var(--surface);
+  box-shadow:var(--shadow-md);
+  transition:transform .3s var(--ease-expo),border-color .3s,box-shadow .3s;
+}
+.link{cursor:pointer}
+.link:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--brand-primary) 55%,transparent);box-shadow:var(--shadow-lg)}
+@media (prefers-reduced-motion:reduce){
+  .card{transition:border-color .3s,box-shadow .3s}
+  .link:hover{transform:none}
+}
+@media (max-width:700px){
+  .card{padding:20px}
+}
