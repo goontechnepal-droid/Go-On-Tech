@@ -44,7 +44,7 @@ export default function QuotePage() {
                 <Icon name="chat" />
               </span>
               <div>
-                <h2>WhatsApp</h2>
+                <h2>WhatsApp &amp; Phone</h2>
                 <p>
                   <a className="text-link" href={whatsappUrl} target="_blank" rel="noopener">
                     {site.whatsapp}

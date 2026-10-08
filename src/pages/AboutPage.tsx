@@ -113,7 +113,7 @@ export default function AboutPage() {
               <Icon name="chat" />
             </span>
             <div>
-              <h3>WhatsApp</h3>
+              <h3>WhatsApp &amp; Phone</h3>
               <p>
                 <a className="text-link" href={whatsappUrl} target="_blank" rel="noopener">
                   {site.whatsapp}

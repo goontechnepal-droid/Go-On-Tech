@@ -12,8 +12,8 @@ export const site = {
   shortName: 'Go On Tech',
   location: 'Kathmandu, Nepal',
   email: 'business@goon.com.np',
-  /** PLACEHOLDER: replace with the real number before launch. This is the only place it lives. */
-  whatsapp: '+977-XXXXXXXXXX',
+  phone: '+977 980-2347742',
+  whatsapp: '+977 980-2347742',
   /** Public site origin, used for canonical URLs. */
   url: 'https://goon.com.np',
   description:
@@ -23,7 +23,8 @@ export const site = {
   social: [] as SocialLink[],
 } as const;
 
-export const whatsappUrl = `https://wa.me/${site.whatsapp.replace(/[^0-9X]/gi, '')}`;
+export const whatsappUrl = `https://wa.me/${site.whatsapp.replace(/[^0-9]/g, '')}`;
+export const telUrl = `tel:${site.phone.replace(/[^0-9+]/g, '')}`;
 export const mailtoUrl = `mailto:${site.email}`;
 
 export interface NavItem {

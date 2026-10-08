@@ -10,7 +10,7 @@ import styles from './pages.module.css';
 export default function ContactPage() {
   return (
     <>
-      <Seo title="Contact" description="Contact Go On Tech Pvt. Ltd. in Kathmandu by form, email or WhatsApp." />
+      <Seo title="Contact" description="Contact Go On Tech Pvt. Ltd. in Kathmandu by form, email, phone or WhatsApp (+977 980-2347742)." />
       <PageHero
         crumbs={[{ label: 'Contact' }]}
         kicker="Contact"
@@ -39,7 +39,7 @@ export default function ContactPage() {
                 <Icon name="chat" />
               </span>
               <div>
-                <h2>WhatsApp</h2>
+                <h2>WhatsApp &amp; Phone</h2>
                 <p>
                   <a className="text-link" href={whatsappUrl} target="_blank" rel="noopener">
                     {site.whatsapp}

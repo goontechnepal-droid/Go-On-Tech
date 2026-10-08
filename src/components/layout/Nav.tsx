@@ -363,7 +363,7 @@ export default function Nav() {
             </a>
             <a href={whatsappUrl} target="_blank" rel="noopener">
               <Icon name="chat" size={17} />
-              WhatsApp
+              WhatsApp {site.whatsapp}
             </a>
           </div>
         </div>

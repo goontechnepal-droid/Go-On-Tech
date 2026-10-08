@@ -2,7 +2,7 @@ import PageHero from '../components/page/PageHero';
 import Seo from '../components/page/Seo';
 import Section from '../components/sections/Section';
 import Icon from '../components/ui/Icon';
-import { mailtoUrl, site } from '../config/site';
+import { mailtoUrl, site, telUrl } from '../config/site';
 import styles from './pages.module.css';
 
 /** Placeholder policy: must be reviewed (ideally by counsel) before the site is published. */
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
 
           <h2>Contact</h2>
           <p>
-            {site.name}, {site.location}. Email: <a href={mailtoUrl}>{site.email}</a>.
+            {site.name}, {site.location}. Email: <a href={mailtoUrl}>{site.email}</a>. Phone: <a href={telUrl}>{site.phone}</a>.
           </p>
         </div>
       </Section>
